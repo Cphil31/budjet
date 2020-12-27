@@ -38,7 +38,7 @@ window.onload = function () {
         menu.appendChild(li); 
         
             
-        total = total + parseFloat(inputPrice.value) ;
+        total = "NaN" ? 0 :  total + parseFloat(inputPrice.value) ;
 
 
         divTotal.innerHTML = `Total : ${total.toFixed(2)} €`;

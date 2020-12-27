@@ -8,14 +8,9 @@ window.onload = function () {
     let inputPrice = document.querySelector("input[name ='price']");
     let tabProduct = [] ;
     let divTotal = document.querySelector('.total')
+    let menu = document.getElementById("menu")
     
-    
-    let divList = document.querySelector(".list");
-    let ul = document.createElement("ul");
-    ul.setAttribute("id","menu");
-    divList.appendChild(ul);
-    
-    
+    ;
     let total = parseFloat(0) ;
     let id = parseInt(0);
     
@@ -40,7 +35,7 @@ window.onload = function () {
         
         
         li.innerHTML = `${id} : ${inputProduct.value} :  ${inputPrice.value} € `;
-        ul.appendChild(li); 
+        menu.appendChild(li); 
         
             
         total = total + parseFloat(inputPrice.value) ;
@@ -48,24 +43,21 @@ window.onload = function () {
 
         divTotal.innerHTML = `Total : ${total.toFixed(2)} €`;
         
-  
-        
         button.innerHTML="";
         button.innerHTML = "supprimer";
 
         document.body.appendChild(button);
 
         let buttonList = document.querySelector("#buttonList");
-        let getUl = document.getElementById('menu');
-
+   
         
         buttonList.addEventListener("click",function(){
-            /*
-            console.log(ul.lastChild);
-            ul.lastChild.removeChild();
-            */
-           getUl.removeChild(getUl.lastElementChild);
-           
+
+            let length = parseInt(tabProduct.length);
+            total = 0;
+            divTotal.innerHTML = "";
+            menu.removeChild(menu.childNodes[0]);
+
         })
 
         e.preventDefault();

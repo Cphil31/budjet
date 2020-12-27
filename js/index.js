@@ -32,9 +32,9 @@ window.onload = function () {
         
         let li = document.createElement("li");
         li.setAttribute("id",id);
+        let price = inputPrice.value == 0 ? 0 : inputPrice.value ;
         
-        
-        li.innerHTML = `${id} : ${inputProduct.value} :  ${inputPrice.value} € `;
+        li.innerHTML = `${id} : ${inputProduct.value} :  ${price} € `;
         menu.appendChild(li); 
         
             

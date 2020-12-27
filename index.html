@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bugjet</title>
+    <title>Budget</title>
+    <script src="js/index.js"></script>
 </head>
+
 <body>
-    <h1>Budgjet</h1>
+    <h1>Budget</h1>
+
+    <form name="form" action="#" >
+        <label for="">Product</label>
+        <input type="text" name="product">
+        <label for="">price</label>
+        <input type="number" name="price" min="0" max="999.99" step="0.01">
+        <input type="submit" class="submit" name="submit">
+    </form>
+
+    <div class="list"></div>
+    <div class="total"></div>
+    
 </body>
+
 </html>

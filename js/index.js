@@ -55,6 +55,7 @@ window.onload = function () {
 
             let length = parseInt(tabProduct.length);
             total = 0;
+            id= 0 ;
             divTotal.innerHTML = "";
             menu.removeChild(menu.childNodes[0]);
 

@@ -32,13 +32,13 @@ window.onload = function () {
         
         let li = document.createElement("li");
         li.setAttribute("id",id);
-        let price = inputPrice.value == 0 ? 0 : inputPrice.value ;
         
-        li.innerHTML = `${id} : ${inputProduct.value} :  ${price} € `;
+        
+        li.innerHTML = `${id} : ${inputProduct.value} :  ${inputPrice.value} € `;
         menu.appendChild(li); 
         
             
-        total = "NaN" ? 0 :  total + parseFloat(inputPrice.value) ;
+        total = total + parseFloat(inputPrice.value) ;
 
 
         divTotal.innerHTML = `Total : ${total.toFixed(2)} €`;

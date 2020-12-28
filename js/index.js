@@ -38,7 +38,7 @@ window.onload = function () {
         li.setAttribute("id", id);
 
 
-        li.innerHTML = `${id} : ${inputProduct.value} :  ${priceValue}  € `;
+        li.innerHTML = `${id} : ${inputProduct.value} :  ${priceValue.toFixed(2)}  € `;
         menu.appendChild(li);
 
 

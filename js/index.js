@@ -5,8 +5,9 @@ window.onload = function () {
     let inputProduct = document.querySelector("input[name ='product']");
     let inputPrice = document.querySelector("input[name ='price']");
     let tabProduct = [];
-    let divTotal = document.querySelector('.total')
-    let menu = document.getElementById("menu")
+    let divTotal = document.querySelector('.total');
+    let divDelete = document.querySelector(".delete");
+    let menu = document.getElementById("menu");
 
     ;
     let total = parseFloat(0);
@@ -21,8 +22,6 @@ window.onload = function () {
         id += 1;
 
         let priceValue = parseFloat(inputPrice.value);
-
-       
 
 
         let object = {
@@ -50,7 +49,7 @@ window.onload = function () {
         button.innerHTML = "";
         button.innerHTML = "supprimer";
 
-        document.body.appendChild(button);
+        divDelete.appendChild(button);
 
         let buttonList = document.querySelector("#buttonList");
 

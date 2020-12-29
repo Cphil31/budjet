@@ -61,6 +61,7 @@ window.onload = function () {
             id = 0;
             divTotal.innerHTML = "";
             menu.removeChild(menu.childNodes[0]);
+            divDelete.innerHTML="";
 
         })
 

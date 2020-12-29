@@ -47,7 +47,7 @@ window.onload = function () {
         divTotal.innerHTML = `Total : ${total.toFixed(2)} €`;
 
         button.innerHTML = "";
-        button.innerHTML = "supprimer";
+        button.innerHTML = "effacer la liste";
 
         divDelete.appendChild(button);
 

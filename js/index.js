@@ -8,7 +8,6 @@ window.onload = function () {
     let tabProduct = [];
     let divTotal = document.querySelector('.total');
     let divDelete = document.querySelector(".delete");
-    let total = parseFloat(0);
     
     
     let id = parseInt(0);
@@ -16,20 +15,23 @@ window.onload = function () {
     
     let buttonDelete = document.createElement("button");
     buttonDelete.setAttribute("id", "buttonList")
-
-
+    
+    
     butSub.addEventListener("click", function (e) {
         
-        id += 1;
+        let total = 0;
         
         let priceValue = parseFloat(inputPrice.value);
-        
         
         let object = {
             "id": id,
             "product": `${inputProduct.value}`,
             "price": priceValue
         }
+        
+
+        
+        id += 1;
         
         tabProduct.push(object);
         
@@ -41,43 +43,53 @@ window.onload = function () {
         li.innerHTML = `${id} : ${inputProduct.value} :  ${priceValue.toFixed(2)}  € `;
         menu.appendChild(li);
         
+        for (p of tabProduct){
+            total += p.price;
+        }
         
-        total = parseFloat(total) + parseFloat(priceValue);
-        //total = 3 ;
-        
-        divTotal.innerHTML = `Total : ${total.toFixed(2)} €`;
-        
-        
-        
+       
+        divTotal.innerHTML=`Total = ${total} €`;
+   
         buttonDelete.innerHTML = "";
         buttonDelete.innerHTML = "suprimer produit "
         
         divDelete.appendChild(buttonDelete);
-
+        
         
         
         e.preventDefault();
     })  // fin de boutton submit
     
     
-    /*
-    */
+    
+    
     function remove(){
+        
         menu.removeChild(menu.lastElementChild);
         let divTotal = document.querySelector(".total");
         //console.log(total);
         divTotal.innerHTML="";
         //récuperer la nouvelle somme
-        
-        console.log(divTotal);
-        console.log(total);
+        tabProduct.pop();
+        let newTotal = 0;
+
+        for(x of tabProduct ){
+            console.log(x);
+            newTotal += x.price ;
+        }
+        console.log(newTotal);
+        if (!newTotal){
+            divTotal.innerHTML = ""; 
+        }
+        else{
+            divTotal.innerHTML=`Total = ${newTotal} €`;
+        }
         //total.innerHTML = `Total : ${total.toFixed(2)} €`
         //total.innerHTML = `Total : ${total.toFixed(2)} €`;
     }
     
     // au click du bouton 
     buttonDelete.addEventListener("click",function(){
-        console.log("delete button");
         remove();
     }) // fin de  click du bouton
 

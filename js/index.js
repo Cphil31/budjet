@@ -51,7 +51,7 @@ window.onload = function () {
         divTotal.innerHTML=`Total = ${total} €`;
    
         buttonDelete.innerHTML = "";
-        buttonDelete.innerHTML = "suprimer produit "
+        buttonDelete.innerHTML = "suprimer le dernier produit "
         
         divDelete.appendChild(buttonDelete);
         

@@ -67,6 +67,8 @@ window.onload = function () {
         let divTotal = document.querySelector(".total");
         //console.log(total);
         divTotal.innerHTML="";
+        //récuperer la nouvelle somme
+        
         console.log(divTotal);
         console.log(total);
         //total.innerHTML = `Total : ${total.toFixed(2)} €`

@@ -10,7 +10,7 @@ window.onload = function () {
     let divDelete = document.querySelector(".delete");
     
     
-    let id = parseInt(0);
+    let id = 0;
     
     
     let buttonDelete = document.createElement("button");
@@ -51,7 +51,7 @@ window.onload = function () {
         divTotal.innerHTML=`Total = ${total} €`;
    
         buttonDelete.innerHTML = "";
-        buttonDelete.innerHTML = "suprimer le dernier produit "
+        buttonDelete.innerHTML = "supprimer le dernier produit "
         
         divDelete.appendChild(buttonDelete);
         
@@ -65,6 +65,7 @@ window.onload = function () {
     
     function remove(){
         
+        id = 0;
         menu.removeChild(menu.lastElementChild);
         let divTotal = document.querySelector(".total");
         //console.log(total);
@@ -72,11 +73,15 @@ window.onload = function () {
         //récuperer la nouvelle somme
         tabProduct.pop();
         let newTotal = 0;
+        
+     
 
         for(x of tabProduct ){
             console.log(x);
+            id++;
             newTotal += x.price ;
         }
+
         console.log(newTotal);
         if (!newTotal){
             divTotal.innerHTML = ""; 

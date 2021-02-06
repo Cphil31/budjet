@@ -7,9 +7,7 @@ window.onload = function () {
     let inputPrice = document.querySelector("input[name ='price']");
     let tabProduct = [];
     let divTotal = document.querySelector('.total');
-    let divDelete = document.querySelector(".delete");
-    
-    
+    let divDelete = document.querySelector(".delete");  
     let id = 0;
     
     
@@ -85,6 +83,7 @@ window.onload = function () {
         console.log(newTotal);
         if (!newTotal){
             divTotal.innerHTML = ""; 
+            divDelete.innerHTML = "";
         }
         else{
             divTotal.innerHTML=`Total = ${newTotal} €`;
